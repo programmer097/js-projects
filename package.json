@@ -4,7 +4,10 @@
   "description": "monorepo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:react": "cd react-project && npm run dev",
+    "dev:node": "cd node-server && npm run dev",
+    "dev:proxy": "cd proxy-server && npm run dev",
+    "dev:all": "npm-run-all -p dev:react dev:node dev:proxy"
   },
   "author": "programmer097",
   "license": "ISC",
