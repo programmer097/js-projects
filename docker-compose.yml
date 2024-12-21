@@ -1,7 +1,21 @@
-version: '1.0'
+version: '2.0'
 services:
+  #react project
+  react-project:
+    build: ./react-project
+    image: react-project
+    container_name: fontend
+    ports:
+      - "5173:5173"
+    environment:
+      - API_URL=http://proxy:4000
+    depends_on: 
+      - proxy
+
+
   # Reverse proxy server
   proxy:
+    build: ./proxy-server
     image: proxy-server
     container_name: proxy4
     ports:
@@ -13,10 +27,8 @@ services:
 
   #Node server
   app:
-    build: .
+    build: ./node-server
     container_name: backend-app
-    ports:
-      - "3000:3000"
     environment:
       - MONGODB_URL=mongodb://mongo
       - MONGODB_PORT=27017

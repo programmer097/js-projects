@@ -7,7 +7,10 @@
     "dev:react": "cd react-project && npm run dev",
     "dev:node": "cd node-server && npm run dev",
     "dev:proxy": "cd proxy-server && npm run dev",
-    "dev:all": "npm-run-all -p dev:react dev:node dev:proxy"
+    "dev:all": "npm-run-all -p dev:react dev:node dev:proxy",
+    "dev:up": "docker-compose up",
+    "dev:down": "docker-compose down",
+    "build-images": "docker-compose build"
   },
   "author": "programmer097",
   "license": "ISC",
